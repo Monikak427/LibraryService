@@ -13,16 +13,26 @@ public class MemberService {
     private Map<Long, Member> memberMap = new HashMap<>();
 
     public Member createMember(Member member){
-
-        // call the database
+        // Call the database or perform any necessary operations
         Long memberId = new Random().nextLong();
         member.setMemberId(memberId);
         memberMap.put(memberId, member);
-        return  member;
+        return member;
     }
 
     public Member getMember(Long memberId) {
-    return memberMap.get(memberId);
+        // Retrieve member from the map (simulating database access)
+        return memberMap.get(memberId);
+    }
 
+    public Member updateMember(Long memberId, Member member) {
+        // Update member in the map (simulating database access)
+        memberMap.put(memberId, member);
+        return member;
+    }
+
+    public void deleteMember(Long memberId) {
+        // Delete member from the map (simulating database access)
+        memberMap.remove(memberId);
     }
 }
